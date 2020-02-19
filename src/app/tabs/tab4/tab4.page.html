@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab four
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider color="primary-background"></ion-item-divider>
+      <ion-item>
+        <ion-icon color="primary" name="globe" slot="start"></ion-icon>
+        <ion-label>{{ 'SETTINGS_PAGE.LANGUAGE' | translate }}</ion-label>
+        <ion-select
+                [(ngModel)]="currentSettings.language"
+                (ngModelChange)="onUpdate()"
+                cancelText="{{ 'CANCEL' | translate }}"
+        >
+          <ion-select-option
+                  *ngFor="let item of objectKeys(availableOptions?.languages)"
+                  [value]="item"
+          >
+            {{ availableOptions?.languages[item] }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="primary" name="moon" slot="start"></ion-icon>
+        <ion-label
+        >{{ 'SETTINGS_PAGE.DARK_MODE' | translate }}</ion-label
+        >
+        <ion-toggle
+                [(ngModel)]="currentSettings.darkMode"
+                (ngModelChange)="onUpdate()"
+        ></ion-toggle>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+          <ion-item-divider color="primary-background"></ion-item-divider>
+          <ion-item>
+              <ion-icon color="primary" name="apps-outline" slot="start"></ion-icon>
+              <ion-label>{{ 'SETTINGS_PAGE.USE_PIN' | translate }}</ion-label>
+              <ion-toggle
+                      [(ngModel)]="currentSettings.usePassword"
+                      (ngModelChange)="onUsePassword()"
+              ></ion-toggle>
+          </ion-item>
+        <ion-item detail (click)="openChangePinPage()" class="custom-arrow" *ngIf="haPassword">
+            <ion-icon
+                    color="primary"
+                    name="lock-closed"
+                    slot="start"
+            ></ion-icon>
+            {{ 'SETTINGS_PAGE.CHANGE_PIN' | translate }}
+        </ion-item>
+      </ion-item-group>
+     <ion-item-group>
+          <ion-item-divider color="primary-background"></ion-item-divider>
+          <ion-item detail (click)="confirmClearData()" class="custom-arrow">
+              <ion-icon color="primary" name="trash" slot="start"></ion-icon>
+              {{ 'SETTINGS_PAGE.CLEAR_DATA' | translate }}
+          </ion-item>
+          <ion-item detail="false">
+              <ion-icon
+                      color="primary"
+                      name="information-circle-outline"
+                      slot="start"
+              ></ion-icon>
+              {{ 'SETTINGS_PAGE.VERSION' | translate }}
+              <div slot="end"><p>{{ appVersion }}</p></div>
+          </ion-item>
+      </ion-item-group>
+  </ion-list>
+</ion-content>
+<pin-code #pinCode (success)="onEnterPinCode()"></pin-code>

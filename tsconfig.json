@@ -2,6 +2,19 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/app/components/*"],
+      "@services/*": ["src/app/services/*"],
+      "@pages/*": ["src/app/pages/*"],
+      "@models/*": ["src/app/models/*"],
+      "@classes/*": ["src/app/classes/*"],
+      "@directives/*": ["src/app/directives/*"],
+      "@utils/*": ["src/app/utils/*"],
+      "@pipes/*": ["src/app/pipes/*"],
+      "@app/*": ["src/app/*"],
+      "@root/*": ["./*"],
+      "*": ["./types/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -12,7 +25,7 @@
     "importHelpers": true,
     "target": "es2015",
     "typeRoots": [
-      "node_modules/@types"
+      "./node_modules/@types"
     ],
     "lib": [
       "es2018",
@@ -21,6 +34,7 @@
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "disableTypeScriptVersionCheck": true
   }
 }

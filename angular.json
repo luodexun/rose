@@ -12,8 +12,11 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
             "outputPath": "www",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,6 +32,11 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ionic4-auto-complete/assets/",
+                "output": "./assets/"
               }
             ],
             "styles": [
@@ -39,7 +47,11 @@
                 "input": "src/global.scss"
               }
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/big-integer/BigInteger.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -72,8 +84,11 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
             "browserTarget": "app:build"
           },
           "configurations": {

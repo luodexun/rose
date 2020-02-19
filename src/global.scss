@@ -10,17 +10,42 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+@import "../node_modules/@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "../node_modules/@ionic/angular/css/normalize.css";
+@import "../node_modules/@ionic/angular/css/structure.css";
+@import "../node_modules/@ionic/angular/css/typography.css";
+@import '../node_modules/@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+@import "../node_modules/@ionic/angular/css/padding.css";
+@import "../node_modules/@ionic/angular/css/float-elements.css";
+@import "../node_modules/@ionic/angular/css/text-alignment.css";
+@import "../node_modules/@ionic/angular/css/text-transformation.css";
+@import "../node_modules/@ionic/angular/css/flex-utils.css";
+
+
+@import "../node_modules/tailwindcss/base.css";
+
+@import "../node_modules/tailwindcss/components.css";
+@import "../node_modules/tailwindcss/utilities.css";
+
+@import "./assets/styles/auto-complete.pcss";
+@import "./assets/styles/app.pcss";
+ion-grid {
+  --ion-grid-padding: 0;
+}
+
+ion-toolbar * {
+  box-sizing: border-box;
+}
+
+.text-selectable {
+  user-select: auto !important;
+}
+
+.note-toolbar {
+  padding: 1em;
+  background-color: rgba(var(--ion-color-warning-rgb), 0.5);
+}
