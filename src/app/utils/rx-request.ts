@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
-
+import { environment} from "@environment/environment"
 /** Based on @waldojeffers/rx-request. */
 export class RxRequest {
     private req: AxiosInstance;
@@ -25,15 +25,7 @@ export class RxRequest {
     }
     public static get Instance(): RxRequest {
         if (RxRequest._instance == null){
-            const config:Record<string,any> = {
-                timeout:6000,
-                withCredentials:true,
-                auth:{
-                    username:"lll279906908",
-                    password:"ldx574425450"
-                }
-            };
-            this._instance = new RxRequest(config);
+            this._instance = new RxRequest(environment.api);
         }
 
         return RxRequest._instance;

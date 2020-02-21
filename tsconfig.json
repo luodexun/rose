@@ -23,6 +23,7 @@
       "@utils/*": ["./src/app/utils/*"],
       "@pipes/*": ["./src/app/pipes/*"],
       "@app/*": ["./src/app/*"],
+      "@environment/*": ["./src/environments/*"],
       "@root/*": ["./*"],
       "*": ["./types/*"]
     }
