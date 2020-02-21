@@ -24,7 +24,7 @@ export class Tab4Page implements OnInit, OnDestroy {
   public currentSettings;
   public availableOptions;
   public onEnterPinCode:()=>void;
-  public appVersion = 132;
+  public appVersion = require('@root/package.json').version;
   public haPassword:boolean;
   private unsubscriber$: Subject<void> = new Subject<void>();
   constructor(

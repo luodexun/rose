@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageService } from '@services/storage/storage.service';
 import { ToastService } from '@services/toast/toast.service';
-import { from } from 'rxjs';
 import * as constants from '@app/app.constants';
+import {InformationService} from "@services/api/information.service";
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -14,12 +14,13 @@ export class Tab2Page {
   constructor(
     private router: Router,
     private storage: StorageService,
-    private toast: ToastService
+    private toast: ToastService,
+    private informationService:InformationService
     ) {
     this.storage.get('kk').subscribe(kk => this.kk = kk);
   }
    buttonClick() {
-        this.router.navigate(['tabs/tab1/home']).then((data) => {console.log(data); });
+        this.informationService.index();
     }
 
     toastClick() {
