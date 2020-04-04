@@ -3,14 +3,13 @@ import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { environment} from "@environment/environment"
 /** Based on @waldojeffers/rx-request. */
 export class RxRequest {
+    private static _instance: RxRequest;
     private req: AxiosInstance;
     public get;
     public post;
     public put;
-    private static _instance: RxRequest;
     constructor(options: any) {
         const headers = {
-            ...options.headers,
             'Content-Type': 'application/json',
         };
 

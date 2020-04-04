@@ -12,7 +12,7 @@ export class InformationService {
   }
 
    public index(){
-       this.http.get('http://0.0.0.0:4003/api/information?page=5&limit=5',{}).subscribe(
+       this.http.get('http://0.0.0.0:4003/api/information',{params:{page:5,limit:5}}).subscribe(
            data => console.log(data)
        )
    }

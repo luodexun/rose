@@ -114,7 +114,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "styles": [],
-            "scripts": [],
+            "scripts": ["https://unpkg.com/video.js/dist/video.min.js"],
             "assets": [
               {
                 "glob": "favicon.ico",
