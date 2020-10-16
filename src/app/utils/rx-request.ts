@@ -17,6 +17,7 @@ export class RxRequest {
             ...options,
             headers
         });
+        this.req.defaults.withCredentials = true;
 
         this.get = this.toObservable(this.req.get);
         this.post = this.toObservable(this.req.post);

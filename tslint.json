@@ -10,6 +10,7 @@
         "allow-leading-underscore"
       ]
     },
+    "prefer-const": false,
     "no-unused-variable": [true, { "ignore-pattern": "^_" }],
     "array-type": false,
     "arrow-parens": false,

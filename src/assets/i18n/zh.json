@@ -1,8 +1,8 @@
 ﻿{
   "TABS":{
     "HOME":"首页",
-    "INFORMATION":"资讯",
-    "MARKET":"行情",
+    "STREAM":"直播",
+    "VIDEO":"视频",
     "MINE":"我的"
   },
   "API": {

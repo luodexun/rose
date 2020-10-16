@@ -19,7 +19,7 @@ import { SettingService } from '@services/setting/setting.service';
 })
 export class AppComponent implements OnDestroy, OnInit{
   constructor(
-      private modalCtrl: ModalController,
+    private modalCtrl: ModalController,
     private platform: Platform,
     private splashScreen: SplashScreen,
     private navController: NavController,

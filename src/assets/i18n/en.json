@@ -1,8 +1,8 @@
 {
   "TABS":{
     "HOME":"home",
-    "INFORMATION":"information",
-    "MARKET":"market",
+    "STREAM":"stream",
+    "VIDEO":"video",
     "MINE":"mine"
   },
   "API": {

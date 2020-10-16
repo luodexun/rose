@@ -1,0 +1,54 @@
+$color-primary: #00D7C6;
+.progressBar {
+  height: 100%;
+  position: relative;
+  flex-grow: 1;
+  margin-left: 40px;
+  margin-right: 40px;
+
+  .progressBarBackground {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transform: translateY(-50%);
+    transition: height .5s;
+
+    .progressBarBuffered {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      pointer-events: none;
+    }
+
+    .progressBarFill {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      background-color: $color-primary;
+      pointer-events: none;
+    }
+
+    .progressBarCursor {
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      cursor: pointer;
+    }
+  }
+}

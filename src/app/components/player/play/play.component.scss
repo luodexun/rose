@@ -1,0 +1,11 @@
+.bigPlay{
+  width: 66px;
+  height: 66px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  cursor: pointer;
+  opacity: .8;
+  transition: opacity .3s;
+}

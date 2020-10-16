@@ -1,14 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListItemModule } from './list-item/list-item.module';
+import { IonicModule } from "@ionic/angular";
+import {CardComponent} from "./card/card.component"
+import {DirectivesModule} from "@directives/directives.module";
+import {DividerComponent} from "./divider/divider.component";
+import {PipesModule} from "@pipes/pipes.module";
+import {SlideComponent} from "./slide/slide.component";
+import { PlayerModule } from "@components/player/player.module";
 @NgModule({
   declarations: [
+    CardComponent,
+    DividerComponent,
+    SlideComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule,
+    DirectivesModule,
+    PipesModule,
+    PlayerModule
   ],
     exports: [
-        ListItemModule
+        CardComponent,
+        DividerComponent,
+        SlideComponent
     ]
 })
 export class ComponentsModule { }

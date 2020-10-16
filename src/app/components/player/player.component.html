@@ -1,0 +1,11 @@
+<div class="warp">
+    <div class="mask"></div>
+    <rose-play #play class="play" [id]="id"></rose-play>
+    <rose-video #player class="video" [id]="id"></rose-video>
+    <rose-controls #control class="controls" [id]="id"></rose-controls>
+    <ion-fab vertical="center" horizontal="center" slot="fixed" (click)="up()" *ngIf="full">
+        <ion-fab-button color="secondary">
+            <ion-icon name="share"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</div>

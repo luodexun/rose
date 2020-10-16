@@ -1,3 +1,28 @@
-<p>
-  card works!
-</p>
+<ion-card>
+    <ion-row>
+        <ion-col appCenter="{{item.main_img|domain:'http://zhuangbiaoimg.haipaitv.cn'}}" class="warp"></ion-col>
+        <ion-col>
+            <ion-text>
+                <h5>{{item.title}}</h5>
+            </ion-text>
+        </ion-col>
+    </ion-row>
+    <app-divider color="#f25454" size="2" origin="w"></app-divider>
+    <ion-row class="tool">
+        <ion-col>
+            <ion-button fill="clear" expand="full" size="small" color="dark">
+                <ion-icon name='heart'></ion-icon>
+            </ion-button>
+        </ion-col>
+        <ion-col>
+            <ion-button fill="clear" expand="full" size="small" color="dark">
+                <ion-icon name='eye'></ion-icon>
+            </ion-button>
+        </ion-col>
+        <ion-col>
+            <ion-button fill="clear" expand="full" size="small" color="dark">
+                <ion-icon name='paper-plane'></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-card>

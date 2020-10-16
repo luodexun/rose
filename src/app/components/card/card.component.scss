@@ -1,0 +1,15 @@
+ion-card{
+   background-color: var(--ion-color-card-background);
+   .warp{
+      width: 40vw;
+      height: 30vw;
+      position: relative;
+      background-color: var(--ion-color-card-img);
+      border-radius: 8px;
+      overflow: hidden;
+   }
+   .tool{
+      background-color: var(--ion-color-card-tool);
+   }
+}
+
