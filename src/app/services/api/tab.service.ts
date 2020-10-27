@@ -4,6 +4,7 @@ import {  Observable} from "rxjs";
 import { Results } from "@models/api/goods";
 import Pagination from "@models/api/pagination";
 import {map} from "rxjs/operators";
+import { localhost } from '../../utils/os'
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +19,7 @@ export class TabService {
   }
   public frame():Observable<Results[]>{
     return new Observable((observer)=>{
-      this.http.get('http://192.168.1.100:1102/goods',{params:{page:1,limit:5}}).subscribe((res)=>{
+      this.http.get(`http://${localhost()}:1102/goods`,{params:{page:1,limit:5}}).subscribe((res)=>{
         if(res.code === 1000){
           this.framePage = res.data.metadata;
           observer.next(res.data.results);
@@ -38,7 +39,7 @@ export class TabService {
       });
     }else {
       return new Observable((observer)=>{
-        this.http.get('http://192.168.1.100:1102/goods',{params:{
+        this.http.get(`http://${localhost()}:1102/goods`,{params:{
             page:this.page,
             limit:this.framePage.num
           }}).subscribe((res) =>  {
@@ -53,7 +54,7 @@ export class TabService {
   }
   public video(){
     return new Observable((observer)=>{
-      this.http.get('http://192.168.1.100:1102/videos',{params:{page:1,limit:9}}).subscribe((res)=>{
+      this.http.get(`http://${localhost()}:1102/videos`,{params:{page:1,limit:9}}).subscribe((res)=>{
         if(res.code === 1000){
           this.videoPage = res.data.metadata;
           observer.next(res.data.results);
@@ -63,8 +64,8 @@ export class TabService {
     }).pipe(
       map((data:[])=>{
        return data.map((item:any)=>{
-          item.url =`http://192.168.1.100:1102${item.url}`;
-          item.cover =`http://192.168.1.100:1102${item.cover}`;
+          item.url =`http://${localhost()}:1102${item.url}`;
+          item.cover =`http://${localhost()}:1102${item.cover}`;
           return  item
         })
       })
@@ -81,7 +82,7 @@ export class TabService {
       });
     }else {
       return new Observable((observer)=>{
-        this.http.get('http://192.168.1.100:1102/videos',{params:{
+        this.http.get(`http://${localhost()}:1102/videos`,{params:{
             page:this.pageVideo,
             limit:this.videoPage.num
           }}).subscribe((res) =>  {
@@ -94,8 +95,8 @@ export class TabService {
       }).pipe(
         map((data:[])=>{
           return data.map((item:any)=>{
-            item.url =`http://192.168.1.100:1102${item.url}`;
-            item.cover =`http://192.168.1.100:1102${item.cover}`;
+            item.url =`http://${localhost()}:1102${item.url}`;
+            item.cover =`http://${localhost()}:1102${item.cover}`;
             return  item
           })
         })
@@ -106,7 +107,7 @@ export class TabService {
 
   public streams(){
     return new Observable((observer)=>{
-      this.http.get('http://192.168.1.100:1102/streams').subscribe((res)=>{
+      this.http.get(`http://${localhost()}:1102/streams`).subscribe((res)=>{
         observer.next(res);
       })
     })
