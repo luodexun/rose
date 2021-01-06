@@ -27,7 +27,7 @@
     "@ngx-translate/core": "^12.1.1",
     "@ngx-translate/http-loader": "latest",
     "@types/node": "^13.7.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "big-integer": "^1.6.48",
     "core-js": "^2.5.4",
